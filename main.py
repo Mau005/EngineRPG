@@ -18,6 +18,7 @@ class Space(App):
         self.manejador = ScreenManager()
         self.game = Game()
         self.asignar_ventanas()
+        print("test")
 
     def asignar_ventanas(self):
         self.manejador.add_widget(self.game)
