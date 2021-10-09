@@ -23,7 +23,6 @@ class Space(App):
         self.manejador.add_widget(self.game)
         
     def update(self,*dt):
-        
         self.game.update(dt)
         
     def build(self):

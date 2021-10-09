@@ -11,7 +11,7 @@ class Lista_Objetos():
     
     def __init__(self):
         local_sprite = "Assets/imagenes"
-        self.__lista_sprites = {1:f"{local_sprite}/Building_Fieldstone_1/Column_2.png"}
+        self.__lista_sprites = {1:f"{local_sprite}/Building_Fieldstone_1/Column_1.png"}
         
         self._listado_objeto = {1:PreObjeto(1,self.__lista_sprites[1])}
         
