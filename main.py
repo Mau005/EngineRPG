@@ -18,17 +18,16 @@ class Space(App):
         self.manejador = ScreenManager()
         self.game = Game()
         self.asignar_ventanas()
-        print("test")
-
+        
     def asignar_ventanas(self):
         self.manejador.add_widget(self.game)
         
     def update(self,*dt):
-        print("test")
+        
         self.game.update(dt)
         
     def build(self):
-        Clock.schedule_interval(self.update,1)
+        Clock.schedule_interval(self.update,(1/60))
         return self.manejador
 
     

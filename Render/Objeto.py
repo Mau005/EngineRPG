@@ -10,11 +10,16 @@ from Core.Coordenadas import Coordenadas
 
 
 class Objeto(Widget,Coordenadas):
-    def __init__(self,ruta_sprite,**kargs):
+    def __init__(self,relacion_aspecto,ruta_sprite,pos,**kargs):
         Widget.__init__(self,**kargs)
         Coordenadas.__init__(self)
+        self.size_hint = (None,None)
+        self.size = [relacion_aspecto["cuadroX"],relacion_aspecto["cuadroY"]]
+        self.pos = pos
         with self.canvas:
             self.bg_rect = Rectangle(source=ruta_sprite, pos=self.pos, size=self.size)
+            
+            
     
     
     
@@ -25,7 +30,11 @@ class Objeto(Widget,Coordenadas):
         self.size = (pos["cuadroX"],pos["cuadroY"])
         self.bg_rect.size = (pos["cuadroX"],pos["cuadroY"])
         
+    def set_pos(self,pos):
+        self.pos = pos
+        self.bg_rect.pos = pos
         
-    def update(self,relacion_aspecto,*dt):
-        self.__ajustado(relacion_aspecto)
+        
+    def update(self,*dt):
+        self.bg_rect.pos = self.pos
         
